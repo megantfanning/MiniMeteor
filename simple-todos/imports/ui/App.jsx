@@ -3,7 +3,7 @@ import { createContainer } from 'meteor/react-meteor-data';
  
 import { Tasks } from '../api/tasks.js';
  
-//import Task from './Task';
+import Task from './Task.jsx';
  
 // App component - represents the whole app
 class App extends Component {
@@ -12,8 +12,9 @@ class App extends Component {
       <Task key={task._id} task={task} />
     ));
   }
-//...some lines skipped...
- 
+
+//----
+// App component - represents the whole app
   render() {
     return (
       <div className="container">
@@ -27,6 +28,8 @@ class App extends Component {
       </div>
     );
   }
+
+//...some lines skipped...
 }
  
 App.propTypes = {
@@ -38,3 +41,9 @@ export default createContainer(() => {
     tasks: Tasks.find({}).fetch(),
   };
 }, App);
+
+
+
+ 
+ 
+
